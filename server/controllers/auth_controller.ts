@@ -45,6 +45,24 @@ class AuthController extends BaseController {
       return this.errorResponse(error.message, 500);
     }
   };
+
+  public logout = async (event: any) => {
+    try {
+      const body = await getHeaders(event);
+
+      const token = body.authorization;
+
+      if (token === undefined) {
+        throw new Error("Invalid token");
+      }
+
+      const logoutResponse = await this.authRepository.logout(token);
+
+      return this.successResponse(logoutResponse, "Logout successful", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
 }
 
 export default new AuthController();

@@ -21,8 +21,11 @@ export class AuthRepository extends Repository implements IAuthRepository {
       // save user
       await newUser.save();
 
+      // remove password from user
+      newUser.password = "";
+
       // generate token
-      const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET_KEY!);
+      const token = jwt.sign({ newUser }, process.env.JWT_SECRET_KEY!);
 
       // return token and user
       return { token: token, user: newUser };
@@ -47,8 +50,6 @@ export class AuthRepository extends Repository implements IAuthRepository {
     // find user by username
     const user = await User.findOne({ username: username }).exec();
 
-    console.log(user);
-
     // if user not found, throw error
     if (user === null || user === undefined) {
       throw new Error("Invalid username or password");
@@ -60,10 +61,27 @@ export class AuthRepository extends Repository implements IAuthRepository {
       throw new Error("Invalid username or password");
     }
 
+    // remove password from user
+    user.password = "";
+
     // generate token
-    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY!);
+    const token = jwt.sign({ user }, process.env.JWT_SECRET_KEY!);
 
     // return token and user
     return { token: token, user: user };
+  };
+
+  public logout = (token: string) => {
+    // validate token
+    if (token === undefined) {
+      throw new Error("Invalid token");
+    }
+
+    // split token to get the actual token
+    const splitToken = token.split(" ");
+    const actualToken = splitToken[1];
+
+    // return success message
+    return { message: "Logout successful" };
   };
 }

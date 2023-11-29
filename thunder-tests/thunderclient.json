@@ -36,5 +36,23 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "7f50faa6-09cf-4a11-b008-57933dbb98b4",
+    "colId": "ffcfff04-b2b3-4886-a56c-0c2317dae895",
+    "containerId": "",
+    "name": "logout",
+    "url": "http://localhost:3000/api/v1/auth/logout",
+    "method": "POST",
+    "sortNum": 15000,
+    "created": "2023-11-29T09:49:01.618Z",
+    "modified": "2023-11-29T10:00:57.511Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1NjZlYzE0OTE1M2Q5MmY0YmFjNWFkZCIsIm5hbWUiOiJzZGZzIGRmcyIsImVtYWlsIjoiYWFzQGFzYWQuY29tIiwicGFzc3dvcmQiOiIiLCJ1c2VybmFtZSI6ImFkbWluIiwiX192IjowfSwiaWF0IjoxNzAxMjUyMDQ0fQ._rOwGdkjI6DmBzB0uvD4bPjsJD7zSEldMw1x0B1C6X0"
+    },
+    "tests": []
   }
 ]
