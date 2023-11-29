@@ -63,6 +63,38 @@ class AuthController extends BaseController {
       return this.errorResponse(error.message, 500);
     }
   };
+
+  public changePassword = async (event: any) => {
+    try {
+      const body = await readBody(event);
+
+      const oldPassword = body.oldPassword;
+      const newPassword = body.newPassword;
+
+      const changePasswordResponse = await this.authRepository.changePassword(
+        oldPassword,
+        newPassword
+      );
+
+      return this.successResponse(changePasswordResponse, "Change password successful", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
+
+  public forgotPassword = async (event: any) => {
+    try {
+      const body = await readBody(event);
+
+      const email = body.email;
+
+      const forgotPasswordResponse = await this.authRepository.forgotPassword(email);
+
+      return this.successResponse(forgotPasswordResponse, "Forgot password successful", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
 }
 
 export default new AuthController();

@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-11-29T07:01:43.191Z",
-    "modified": "2023-11-29T07:49:33.261Z",
+    "modified": "2023-11-29T11:31:08.029Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"username\":\"admin\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"aas@aaasad.com\"\n}",
+      "raw": "{\n  \"username\":\"ahrasel\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"ahrasel95@gmail.com\"\n}",
       "form": []
     },
     "tests": []
@@ -49,6 +49,29 @@
     "modified": "2023-11-29T10:00:57.511Z",
     "headers": [],
     "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1NjZlYzE0OTE1M2Q5MmY0YmFjNWFkZCIsIm5hbWUiOiJzZGZzIGRmcyIsImVtYWlsIjoiYWFzQGFzYWQuY29tIiwicGFzc3dvcmQiOiIiLCJ1c2VybmFtZSI6ImFkbWluIiwiX192IjowfSwiaWF0IjoxNzAxMjUyMDQ0fQ._rOwGdkjI6DmBzB0uvD4bPjsJD7zSEldMw1x0B1C6X0"
+    },
+    "tests": []
+  },
+  {
+    "_id": "617349f1-aeac-46ee-9141-3d60bcaafc6d",
+    "colId": "ffcfff04-b2b3-4886-a56c-0c2317dae895",
+    "containerId": "",
+    "name": "forgot-password",
+    "url": "http://localhost:3000/api/v1/auth/forgot-password",
+    "method": "POST",
+    "sortNum": 17500,
+    "created": "2023-11-29T11:28:27.990Z",
+    "modified": "2023-11-29T11:30:03.920Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"email\":\"ahrasel95@gmail.com\"\n}",
+      "form": []
+    },
     "auth": {
       "type": "bearer",
       "bearer": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1NjZlYzE0OTE1M2Q5MmY0YmFjNWFkZCIsIm5hbWUiOiJzZGZzIGRmcyIsImVtYWlsIjoiYWFzQGFzYWQuY29tIiwicGFzc3dvcmQiOiIiLCJ1c2VybmFtZSI6ImFkbWluIiwiX192IjowfSwiaWF0IjoxNzAxMjUyMDQ0fQ._rOwGdkjI6DmBzB0uvD4bPjsJD7zSEldMw1x0B1C6X0"

@@ -3,6 +3,7 @@ import { IAuthRepository } from "./i_auth_repository";
 import User, { IUser } from "../models/user";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
+import nodemailer from "nodemailer";
 
 export class AuthRepository extends Repository implements IAuthRepository {
   public register = async (user: IUser) => {
@@ -83,5 +84,63 @@ export class AuthRepository extends Repository implements IAuthRepository {
 
     // return success message
     return { message: "Logout successful" };
+  };
+
+  public forgotPassword = async (email: string): Promise<any> => {
+    if (email === undefined) {
+      throw new Error("Invalid email");
+    }
+
+    // find user by email
+    const user = await User.findOne({ email: email }).exec();
+
+    // if user not found, throw error
+    if (user === null || user === undefined) {
+      throw new Error("Invalid email");
+    }
+
+    // send email
+    const transport = nodemailer.createTransport({
+      host: process.env.MAIL_SERVER,
+      port: process.env.MAIL_PORT,
+      auth: {
+        user: process.env.MAIL_USERNAME,
+        pass: process.env.MAIL_PASSWORD,
+      },
+    } as any);
+
+    // password reset link generation logic
+    const token = jwt.sign({ user }, process.env.JWT_SECRET_KEY!, {
+      expiresIn: "1h",
+    });
+
+    const link = `${process.env.CLIENT_URL}/reset-password?token=${token}`;
+
+    const template = `
+      <div>
+        <h1>Reset password</h1>
+        <p>Click <a href="${link}">here</a> to reset your password</p>
+      </div>`;
+
+    const mailOptions = {
+      from: process.env.MAIL_FROM,
+      to: email,
+      subject: "Reset password",
+      text: "Reset password",
+      html: template,
+    };
+
+    transport.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        throw new Error("Error sending email");
+      }
+    });
+
+    // return success message
+    return { message: "Forgot password successful" };
+  };
+
+  public changePassword = (oldPassword: string, newPassword: string): any => {
+    throw new Error("Method not implemented.");
   };
 }

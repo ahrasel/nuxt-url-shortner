@@ -13,6 +13,7 @@
     "@nuxt/devtools": "latest",
     "@types/bcrypt": "^5.0.2",
     "@types/jsonwebtoken": "^9.0.5",
+    "@types/nodemailer": "^6.4.14",
     "nuxt": "^3.8.2",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
@@ -20,6 +21,7 @@
   "dependencies": {
     "bcrypt": "^5.1.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.1"
+    "mongoose": "^8.0.1",
+    "nodemailer": "^6.9.7"
   }
 }
