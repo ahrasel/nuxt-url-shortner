@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-11-29T07:01:43.191Z",
-    "modified": "2023-11-30T11:24:18.560Z",
+    "modified": "2023-11-30T12:16:34.679Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"username\":\"ahrasael\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"ahrasel95a@gmail.com\"\n}",
+      "raw": "{\n  \"username\":\"ahrasel\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"ahrasel95a@gmail.com\"\n}",
       "form": []
     },
     "tests": []
