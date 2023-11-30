@@ -27,12 +27,12 @@
     "method": "POST",
     "sortNum": 20000,
     "created": "2023-11-29T07:01:43.191Z",
-    "modified": "2023-11-29T11:31:08.029Z",
+    "modified": "2023-11-30T11:24:18.560Z",
     "headers": [],
     "params": [],
     "body": {
       "type": "json",
-      "raw": "{\n  \"username\":\"ahrasel\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"ahrasel95@gmail.com\"\n}",
+      "raw": "{\n  \"username\":\"ahrasael\",\n  \"password\":\"123456789\",\n  \"name\":\"sdfs dfs\",\n  \"email\":\"ahrasel95a@gmail.com\"\n}",
       "form": []
     },
     "tests": []
@@ -87,7 +87,7 @@
     "method": "POST",
     "sortNum": 18750,
     "created": "2023-11-30T10:16:32.496Z",
-    "modified": "2023-11-30T11:19:09.131Z",
+    "modified": "2023-11-30T11:24:02.901Z",
     "headers": [],
     "params": [],
     "body": {
