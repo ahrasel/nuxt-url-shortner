@@ -98,8 +98,6 @@ export class AuthRepository extends Repository implements IAuthRepository {
       throw new Error("Invalid email");
     }
 
-    // send email
-
     // password reset link generation logic
     const token = jwt.sign({ user }, process.env.JWT_SECRET_KEY!, {
       expiresIn: "1h",
@@ -119,7 +117,39 @@ export class AuthRepository extends Repository implements IAuthRepository {
     return { message: "Forgot password successful" };
   };
 
-  public changePassword = (oldPassword: string, newPassword: string): any => {
-    throw new Error("Method not implemented.");
+  public changePassword = async (
+    oldPassword: string,
+    newPassword: string,
+    event: any
+  ): Promise<any> => {
+    await this.auth(event);
+
+    // validate old password and new password
+    if (oldPassword === undefined || newPassword === undefined) {
+      throw new Error("Invalid old password or new password");
+    }
+
+    // find user by id
+    const user = await User.findById(this.userId).exec();
+
+    // if user not found, throw error
+    if (user === null || user === undefined) {
+      throw new Error("Invalid user");
+    }
+
+    // if user found, compare password
+    const isPasswordMatch = await bcrypt.compare(oldPassword, user.password);
+    if (!isPasswordMatch) {
+      throw new Error("Invalid old password");
+    }
+
+    // bcrypt new password
+    const hashedPassword = await bcrypt.hash(newPassword, 10);
+
+    // update user password
+    User.findByIdAndUpdate(this.userId, { password: hashedPassword }, { new: true }).exec();
+
+    // return success message
+    return { message: "Change password successful" };
   };
 }

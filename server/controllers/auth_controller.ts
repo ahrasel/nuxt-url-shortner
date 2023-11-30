@@ -73,7 +73,8 @@ class AuthController extends BaseController {
 
       const changePasswordResponse = await this.authRepository.changePassword(
         oldPassword,
-        newPassword
+        newPassword,
+        event
       );
 
       return this.successResponse(changePasswordResponse, "Change password successful", 200);
