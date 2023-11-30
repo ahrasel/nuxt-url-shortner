@@ -8,11 +8,11 @@ function connect() {
     }
     mongoose
       .connect(uri, {
-        dbName: "urls",
-        user: "ahrasel",
-        pass: "ahrasel",
-        authSource: "admin",
-        serverSelectionTimeoutMS: 5000,
+        dbName: process.env.MONGODB_DB,
+        user: process.env.MONGODB_USER,
+        pass: process.env.MONGODB_PASSWORD,
+        authSource: process.env.MONGODB_AUTH_SOURCE,
+        serverSelectionTimeoutMS: Number(process.env.MONGODB_SERVER_SELECTION_TIMEOUT_MS),
       })
       .then(() => console.log("Connected to MongoDB"));
   } catch (error) {
