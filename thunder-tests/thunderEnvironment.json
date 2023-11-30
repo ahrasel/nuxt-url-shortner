@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "_id": "f2077941-3d1e-4235-b549-0621b9a458cc",
+    "name": "local",
+    "default": true,
+    "sortNum": 10000,
+    "created": "2023-11-30T17:15:55.491Z",
+    "modified": "2023-11-30T17:15:55.491Z",
+    "data": [
+      {
+        "name": "token",
+        "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY1NjhiNDJkZTdhZTNmZjBkNDI0NTYzMCIsIm5hbWUiOiJzZGZzIGRmcyIsImVtYWlsIjoiYWhyYXNlbDk1YUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiIsInVzZXJuYW1lIjoiYWhyYXNlbCIsInVybHMiOltdLCJfX3YiOjB9LCJpYXQiOjE3MDEzNjQ2MDB9.8kngrKJtFdP6xjbH2ItxnK-PVMx6-fJvvtPGtpQ84bE"
+      }
+    ]
+  }
+]

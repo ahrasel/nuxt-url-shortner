@@ -58,4 +58,15 @@ export class Repository implements IRepository {
       throw error;
     }
   };
+
+  public slug = (value: string): string => {
+    return value
+      .toLowerCase()
+      .replace(/[^\w ]+/g, "")
+      .replace(/ +/g, "-");
+  };
+
+  public generateUniqueCode = (): string => {
+    return Math.random().toString(36).substr(2, 5);
+  };
 }
