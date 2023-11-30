@@ -2,6 +2,7 @@ import { BaseController } from "./controller";
 import { IAuthRepository } from "../repositories/i_auth_repository";
 import { AuthRepository } from "../repositories/auth_repository";
 import { IUser } from "../models/user";
+import { EventHandlerRequest, H3Event } from "h3";
 
 class AuthController extends BaseController {
   private authRepository: IAuthRepository;
@@ -11,7 +12,7 @@ class AuthController extends BaseController {
     this.authRepository = new AuthRepository();
   }
 
-  public login = async (event: any) => {
+  public login = async (event: H3Event<EventHandlerRequest>) => {
     try {
       const body = await readBody(event);
 
@@ -26,7 +27,7 @@ class AuthController extends BaseController {
     }
   };
 
-  public register = async (event: any) => {
+  public register = async (event: H3Event<EventHandlerRequest>) => {
     try {
       const body = await readBody(event);
 
@@ -46,7 +47,7 @@ class AuthController extends BaseController {
     }
   };
 
-  public logout = async (event: any) => {
+  public logout = async (event: H3Event<EventHandlerRequest>) => {
     try {
       const body = await getHeaders(event);
 
@@ -64,7 +65,7 @@ class AuthController extends BaseController {
     }
   };
 
-  public changePassword = async (event: any) => {
+  public changePassword = async (event: H3Event<EventHandlerRequest>) => {
     try {
       const body = await readBody(event);
 
@@ -83,7 +84,7 @@ class AuthController extends BaseController {
     }
   };
 
-  public forgotPassword = async (event: any) => {
+  public forgotPassword = async (event: H3Event<EventHandlerRequest>) => {
     try {
       const body = await readBody(event);
 
