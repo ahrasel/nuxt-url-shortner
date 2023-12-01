@@ -7,6 +7,7 @@ export interface IUser {
   avatar?: string;
   username: string;
   urls?: mongoose.Schema.Types.ObjectId[];
+  userType: string;
 }
 
 const Schema = mongoose.Schema;
@@ -18,6 +19,7 @@ const userSchema = new Schema<IUser>({
   avatar: { type: String, required: false, unique: true, sparse: true },
   username: { type: String, required: [true, "Username is required"], unique: true },
   urls: [{ type: mongoose.Schema.Types.ObjectId, ref: "Url", required: false }],
+  userType: { type: String, default: "user" },
 });
 
 const User = mongoose.model("User", userSchema);
