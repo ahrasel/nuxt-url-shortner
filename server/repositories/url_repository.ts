@@ -77,4 +77,12 @@ export class UrlRepository extends Repository {
 
     return url;
   };
+
+  public userUrls = async (event: H3Event<EventHandlerRequest>) => {
+    const userId = getRouterParam(event, "userId");
+
+    const urls = await Url.find({ user: userId });
+
+    return urls;
+  };
 }

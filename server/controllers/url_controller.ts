@@ -58,6 +58,16 @@ class UrlController extends BaseController {
       return this.errorResponse(error.message, 500);
     }
   };
+
+  public userUrls = async (event: H3Event) => {
+    try {
+      const urls = await this.repository.userUrls(event);
+
+      return this.successResponse(urls, "Urls get successfully", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
 }
 
 export default new UrlController();

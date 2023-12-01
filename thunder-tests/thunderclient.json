@@ -147,11 +147,11 @@
     "colId": "f6fc021e-3c06-4e0b-999d-c47d596597f3",
     "containerId": "",
     "name": "show",
-    "url": "http://localhost:3000/api/v1/urls/71vsv",
+    "url": "http://localhost:3000/api/v1/urls/golgdf",
     "method": "GET",
     "sortNum": 30000,
     "created": "2023-12-01T12:56:19.136Z",
-    "modified": "2023-12-01T13:03:11.905Z",
+    "modified": "2023-12-01T13:52:39.019Z",
     "headers": [],
     "params": [],
     "auth": {
@@ -165,11 +165,11 @@
     "colId": "f6fc021e-3c06-4e0b-999d-c47d596597f3",
     "containerId": "",
     "name": "delete",
-    "url": "http://localhost:3000/api/v1/urls/eua0l",
+    "url": "http://localhost:3000/api/v1/urls/golgdf",
     "method": "DELETE",
     "sortNum": 40000,
     "created": "2023-12-01T13:07:37.047Z",
-    "modified": "2023-12-01T13:15:04.470Z",
+    "modified": "2023-12-01T13:56:58.852Z",
     "headers": [],
     "params": [],
     "auth": {
@@ -188,6 +188,24 @@
     "sortNum": 32500,
     "created": "2023-12-01T13:23:25.097Z",
     "modified": "2023-12-01T13:35:19.892Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "c8bf487a-630f-4e2e-b41e-196e16ced017",
+    "colId": "f6fc021e-3c06-4e0b-999d-c47d596597f3",
+    "containerId": "",
+    "name": "all urls by user",
+    "url": "http://localhost:3000/api/v1/urls/user/6568b42de7ae3ff0d4245630/all",
+    "method": "GET",
+    "sortNum": 15000,
+    "created": "2023-12-01T13:44:37.603Z",
+    "modified": "2023-12-01T13:55:30.150Z",
     "headers": [],
     "params": [],
     "auth": {
