@@ -33,4 +33,16 @@ export class UrlRepository extends Repository {
 
     return createdUrl;
   };
+
+  public getUrl = async (event: H3Event) => {
+    const slug = getRouterParam(event, "code");
+
+    const url = await Url.findOne({ slug });
+
+    if (!url) {
+      throw new Error("Url not found");
+    }
+
+    return url;
+  };
 }

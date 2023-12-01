@@ -10,7 +10,7 @@ class UrlController extends BaseController {
     this.repository = new UrlRepository();
   }
 
-  public index = async (event: any) => {
+  public index = async (event: H3Event) => {
     try {
       const urls = await this.repository.allUrls(event);
       return this.successResponse(urls, "All urls get successfully", 200);
@@ -19,11 +19,21 @@ class UrlController extends BaseController {
     }
   };
 
-  public create = async (event: any) => {
+  public create = async (event: H3Event) => {
     try {
       const url = await this.repository.createUrl(event);
 
       return this.successResponse(url, "Url created successfully", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
+
+  public show = async (event: H3Event) => {
+    try {
+      const url = await this.repository.getUrl(event);
+
+      return this.successResponse(url, "Url get successfully", 200);
     } catch (error: any) {
       return this.errorResponse(error.message, 500);
     }

@@ -141,5 +141,23 @@
       "bearer": "{{token}}"
     },
     "tests": []
+  },
+  {
+    "_id": "48d40ff8-1298-4ee9-ae34-e5873c780c24",
+    "colId": "f6fc021e-3c06-4e0b-999d-c47d596597f3",
+    "containerId": "",
+    "name": "show",
+    "url": "http://localhost:3000/api/v1/urls/71vsv",
+    "method": "GET",
+    "sortNum": 30000,
+    "created": "2023-12-01T12:56:19.136Z",
+    "modified": "2023-12-01T13:03:11.905Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
   }
 ]
