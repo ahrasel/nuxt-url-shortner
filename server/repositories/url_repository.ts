@@ -65,4 +65,16 @@ export class UrlRepository extends Repository {
 
     return "Url deleted successfully";
   };
+
+  public clickUrl = async (event: H3Event<EventHandlerRequest>) => {
+    const slug = getRouterParam(event, "code");
+
+    const url = await Url.findOneAndUpdate({ slug }, { $inc: { clicks: 1 } });
+
+    if (!url) {
+      throw new Error("Url not found");
+    }
+
+    return url;
+  };
 }

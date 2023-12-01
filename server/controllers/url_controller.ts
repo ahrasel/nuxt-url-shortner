@@ -48,6 +48,16 @@ class UrlController extends BaseController {
       return this.errorResponse(error.message, 500);
     }
   };
+
+  public click = async (event: H3Event) => {
+    try {
+      const url = await this.repository.clickUrl(event);
+
+      return this.successResponse(url, "Url clicked successfully", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
 }
 
 export default new UrlController();
