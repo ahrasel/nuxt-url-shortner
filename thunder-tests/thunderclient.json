@@ -110,7 +110,7 @@
     "method": "GET",
     "sortNum": 10000,
     "created": "2023-11-30T16:48:55.942Z",
-    "modified": "2023-11-30T17:23:42.363Z",
+    "modified": "2023-12-01T13:14:01.755Z",
     "headers": [],
     "params": [],
     "auth": {
@@ -152,6 +152,24 @@
     "sortNum": 30000,
     "created": "2023-12-01T12:56:19.136Z",
     "modified": "2023-12-01T13:03:11.905Z",
+    "headers": [],
+    "params": [],
+    "auth": {
+      "type": "bearer",
+      "bearer": "{{token}}"
+    },
+    "tests": []
+  },
+  {
+    "_id": "0b41fd7f-5b4e-4564-a054-5ad5823251e2",
+    "colId": "f6fc021e-3c06-4e0b-999d-c47d596597f3",
+    "containerId": "",
+    "name": "delete",
+    "url": "http://localhost:3000/api/v1/urls/eua0l",
+    "method": "DELETE",
+    "sortNum": 40000,
+    "created": "2023-12-01T13:07:37.047Z",
+    "modified": "2023-12-01T13:15:04.470Z",
     "headers": [],
     "params": [],
     "auth": {

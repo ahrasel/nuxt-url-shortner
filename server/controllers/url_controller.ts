@@ -38,6 +38,16 @@ class UrlController extends BaseController {
       return this.errorResponse(error.message, 500);
     }
   };
+
+  public delete = async (event: H3Event) => {
+    try {
+      const url = await this.repository.deleteUrl(event);
+
+      return this.successResponse(url, "Url deleted successfully", 200);
+    } catch (error: any) {
+      return this.errorResponse(error.message, 500);
+    }
+  };
 }
 
 export default new UrlController();

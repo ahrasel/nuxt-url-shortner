@@ -35,6 +35,8 @@ export class UrlRepository extends Repository {
   };
 
   public getUrl = async (event: H3Event) => {
+    await this.auth(event);
+
     const slug = getRouterParam(event, "code");
 
     const url = await Url.findOne({ slug });
@@ -44,5 +46,23 @@ export class UrlRepository extends Repository {
     }
 
     return url;
+  };
+
+  public deleteUrl = async (event: H3Event<EventHandlerRequest>) => {
+    await this.auth(event);
+
+    const slug = getRouterParam(event, "code");
+
+    const url = await Url.deleteOne({ slug });
+
+    if (!url) {
+      throw new Error("Url not found");
+    }
+
+    if (url.deletedCount === 0) {
+      throw new Error("Url not found");
+    }
+
+    return "Url deleted successfully";
   };
 }
