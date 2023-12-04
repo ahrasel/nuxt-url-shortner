@@ -5,4 +5,9 @@ export default defineNuxtConfig({
   ssr: true,
 
   modules: ["@nuxtjs/tailwindcss"],
+  dev: true,
+  devServer: {
+    port: Number(process.env.PORT) || 6000,
+    host: process.env.HOST || "localhost",
+  },
 });
