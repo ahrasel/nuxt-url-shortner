@@ -156,4 +156,4 @@ For any questions or concerns, feel free to reach out to the project maintainer:
 
 - MD Amanullah Hoque
 - ahrasel95@gmail.com
-- Website: [GitHub Profile](https://ahrasel.com)
+- Website: [Profile](https://ahrasel.com)
