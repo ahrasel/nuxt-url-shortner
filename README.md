@@ -1,75 +1,159 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 URL Shortener API PROJECT
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Overview:
 
-## Setup
+This open-source project is a simple URL shortener API built with Nuxt 3 and MongoDB. It allows users to shorten long URLs into more manageable and shareable links. This README provides information on how to set up and use the project.
 
-Make sure to install the dependencies:
+## Project Structure:
 
-```bash
-# npm
-npm install
+The project follows a modular structure to enhance maintainability and organization. Here's an overview of the key directories:
 
-# pnpm
-pnpm install
+- **/api:** Contains API-related endpoints.
+- **/config:** Houses configuration files for the project, including settings for the URL shortener API.
+- **/controllers:** Manages controllers, handling the business logic and interaction with the data.
+- **/models:** Defines the data models for MongoDB, specifying the structure of the stored data.
+- **/plugins:** Stores any plugins utilized in the project, enhancing functionality or providing additional features.
+- **/repositories:** Contains repository classes responsible for interacting with the database.
+- **/view-models:** Manages view models, which shape the data to be presented in the frontend.
+- **tsconfig.json:** TypeScript configuration settings.
 
-# yarn
-yarn install
+Feel free to explore each directory for more details on their specific roles and contents.
 
-# bun
-bun install
-```
+## Requirements:
 
-## Development Server
+- Node.js
+- Nuxt 3
+- MongoDB
 
-Start the development server on `http://localhost:3000`:
+## Installation:
 
-```bash
-# npm
-npm run dev
+1. Clone the repository:
 
-# pnpm
-pnpm run dev
+   ```bash
+   git clone https://github.com/ahrasel/nuxt-url-shortner.git
+   ```
 
-# yarn
-yarn dev
+2. Navigate to the project directory:
 
-# bun
-bun run dev
-```
+   ```bash
+   cd nuxt-url-shortner
+   ```
 
-## Production
+3. Install dependencies:
 
-Build the application for production:
+   ```bash
+   npm install
+   ```
 
-```bash
-# npm
-npm run build
+4. Configure the MongoDB connection:
 
-# pnpm
-pnpm run build
+   - Open `config.js` file and update the MongoDB connection URI.
 
-# yarn
-yarn build
+5. Create `.env` file from `.env.example`
 
-# bun
-bun run build
-```
+## Usage:
 
-Locally preview production build:
+1. Start the Nuxt 3 app:
 
-```bash
-# npm
-npm run preview
+   ```bash
+   npm run dev
+   ```
 
-# pnpm
-pnpm run preview
+2. Access the application in your browser:
 
-# yarn
-yarn preview
+   ```bash
+   http://localhost:3000
+   ```
 
-# bun
-bun run preview
-```
+3. Use the API to register URLs:
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+   - Send a POST request to `http://localhost:3000/api/v1/auth/register` with a JSON payload containing the original URL:
+
+     ```json
+     {
+       "username": "ahrasel",
+       "password": "123456789",
+       "name": "MD Amanullah Hoque",
+       "email": "ahrasel95@gmail.com"
+     }
+     ```
+
+4. Use the API to login URLs:
+
+   - Send a POST request to `http://localhost:3000/api/v1/auth/login` with a JSON payload containing the original URL:
+
+     ```json
+     {
+       "username": "ahrasel",
+       "password": "123456789"
+     }
+     ```
+
+5. Use the API to logout URLs:
+
+   - Send a POST request to `http://localhost:3000/api/v1/auth/logout` with a bearer token
+
+6. Use the API to change password URLs:
+
+   - Send a POST request to `http://localhost:3000/api/v1/auth/change-password` with a JSON payload containing the original URL:
+
+     ```json
+     {
+       "oldPassword": "123456789",
+       "newPassword": "123456789"
+     }
+     ```
+
+7. Use the API to forgot password URLs:
+
+   - Send a POST request to `http://localhost:3000/api/v1/auth/forgot-password` with a JSON payload containing the original URL:
+
+     ```json
+     {
+       "email": "ahrasel95@gmail.com"
+     }
+     ```
+
+8. Use the API to all shorten urls URLs:
+
+   - Send a GET request to `http://localhost:3000/api/v1/urls`
+
+9. Use the API to create short url URLs:
+
+   - Send a POST request to `http://localhost:3000/api/v1/urls` with a JSON payload containing the original URL:
+
+     ```json
+     {
+       "url": "http://localhost:3000/url"
+     }
+     ```
+
+10. Use the API to increase click URLs:
+
+    - Send a GET request to `http://localhost:3000/api/v1/urls/[id]/click`
+
+    there are also some other routes for api. you can test with this vscode thunder client extension
+
+## Configuration:
+
+- `config.js` contains configuration settings, including the MongoDB connection URI.
+
+## Contributing:
+
+Contributions are welcome! If you'd like to contribute, please follow the [Contribution Guidelines](CONTRIBUTING.md).
+
+## License:
+
+This project is licensed under the [MIT License](LICENSE). Feel free to use and modify it as per your needs.
+
+## Acknowledgments:
+
+Special thanks to the Nuxt 3 and MongoDB communities for their excellent tools and resources.
+
+## Contact:
+
+For any questions or concerns, feel free to reach out to the project maintainer:
+
+- MD Amanullah Hoque
+- ahrasel95@gmail.com
+- Your GitHub Profile: [GitHub Profile](https://github.com/ahrasel)
