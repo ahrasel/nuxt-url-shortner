@@ -6,7 +6,7 @@ This open-source project is a simple URL shortener API built with Nuxt 3 and Mon
 
 ## Project Structure:
 
-The project follows a modular structure to enhance maintainability and organization. Here's an overview of the key directories:
+The project follows a modular structure to enhance maintainability and organization. Here's an overview of the key directories in `server` directory:
 
 - **/api:** Contains API-related endpoints.
 - **/config:** Houses configuration files for the project, including settings for the URL shortener API.
